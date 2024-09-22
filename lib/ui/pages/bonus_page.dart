@@ -16,52 +16,54 @@ class BonusPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            _CardWidget(
-              cardName: fullname,
-              nominal: 'IDR 280.000.000',
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 80),
-              child: Text(
-                'Big Bonus 🎉',
-                style: blackTextStyle.copyWith(
-                  fontSize: 32,
-                  fontWeight: semiBold,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _CardWidget(
+                cardName: fullname,
+                nominal: 'IDR 280.000.000',
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 80),
+                child: Text(
+                  'Big Bonus 🎉',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 32,
+                    fontWeight: semiBold,
+                  ),
                 ),
               ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 10),
-              child: Text(
-                'We give you early credit so that\nyou can buy a flight ticket',
-                style: greyTextStyle.copyWith(
-                  fontSize: 16,
-                  fontWeight: light,
+              Container(
+                margin: const EdgeInsets.only(top: 10),
+                child: Text(
+                  'We give you early credit so that\nyou can buy a flight ticket',
+                  style: greyTextStyle.copyWith(
+                    fontSize: 16,
+                    fontWeight: light,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
               ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 50),
-              child: CustomButtonWidget(
-                width: 220,
-                text: 'Start Fly Now',
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MainPage(
-                        fullname: fullname,
+              Container(
+                margin: const EdgeInsets.only(top: 50),
+                child: CustomButtonWidget(
+                  width: 220,
+                  text: 'Start Fly Now',
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MainPage(
+                          fullname: fullname,
+                        ),
                       ),
-                    ),
-                  );
-                },
+                    );
+                  },
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
